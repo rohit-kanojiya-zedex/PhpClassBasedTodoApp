@@ -6,14 +6,23 @@
 ![image](https://github.com/user-attachments/assets/7eff3b82-39f7-4b35-9eda-61924064f16f)
 
 
+
 <h2>Login page </h2>
 
 ![image](https://github.com/user-attachments/assets/0bb38731-4391-417f-946a-5ea82e131a06)
+
+
 
 <h2>Registration page </h2>
 
 ![image](https://github.com/user-attachments/assets/1d65156d-c420-4392-bdeb-4aeb27c5d13d)
 ![image](https://github.com/user-attachments/assets/8de95a29-0882-44a1-a6bc-a3e6183aab91)
+
+
+<h2>Validation in page</h2>
+
+![image](https://github.com/user-attachments/assets/6cfd5fe9-6281-4288-9962-4edc14fcbc92)
+
 
 
 
