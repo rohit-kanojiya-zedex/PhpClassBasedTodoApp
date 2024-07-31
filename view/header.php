@@ -1,5 +1,6 @@
 <?php
 ob_start();
+include __DIR__ . '/../App/Controller/access_control.php';
 ?>
 <!doctype html>
 <html lang="en">
@@ -47,9 +48,12 @@ ob_start();
                     <a data-mdb-dropdown-init class="dropdown-toggle d-flex align-items-center hidden-arrow" href="#" id="navbarDropdownMenuAvatar" role="button" data-mdb-toggle="dropdown" aria-expanded="false">
                         <img src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp" class="rounded-circle" height="25" alt="Black and White Portrait of a Man" loading="lazy" />
                     </a>
-                    <a href="/logout.php" class="dropdown-item bg-danger">Logout</a>
+                    <?php
+                    if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) {
+                        echo "<a href='/logout.php' class='dropdown-item bg-danger'>Logout</a>";
+                    }
+                    ?>
                 </div>
-
         </div>
     </div>
 </nav>

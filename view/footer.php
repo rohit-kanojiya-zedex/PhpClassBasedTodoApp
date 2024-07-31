@@ -1,3 +1,6 @@
+<?php
+include __DIR__ . '/../App/Controller/access_control.php';
+?>
 <footer class="bg-primary text-center text-white">
     <div class="container p-4 pb-0">
         <section class="mb-4">

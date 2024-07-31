@@ -1,6 +1,5 @@
 <?php
-
-
+include __DIR__ . '/../App/Controller/access_control.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">

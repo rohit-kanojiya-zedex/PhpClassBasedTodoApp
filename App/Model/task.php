@@ -102,7 +102,7 @@ class task {
         $stmt->bindParam(':password', $param_password, PDO::PARAM_STR);
 
         if ($stmt->execute()) {
-            header("Location: ../signin.php");
+            header("Location: ../index.php");
             exit;
         } else {
             throw new \Exception("Error registering user");
@@ -127,7 +127,7 @@ class task {
                 $_SESSION["loggedin"] = true;
                 $_SESSION["id"] = $id;
                 $_SESSION["username"] = $username;
-                header("Location: /index.php");
+                header("Location: ../index.php");
                 exit;
             } else {
                 return "Invalid username or email or password.";

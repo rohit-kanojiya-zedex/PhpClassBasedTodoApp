@@ -1,3 +1,6 @@
+<?php
+include __DIR__ . '/../App/Controller/access_control.php';
+?>
 <h1 class="text-center pt-5 pb-3">Task list</h1>
 <div class="p-5 bg-dark mb-5 mx-3">
 <div class="addmore mb-3">

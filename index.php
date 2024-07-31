@@ -11,7 +11,6 @@ $database = new database();
 $task_model = new task($database->getConnection());
 
 require_once 'view/header.php';
-
 if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) {
     $result_set = $task_model->getdata();
     $counter = 1;
@@ -24,10 +23,11 @@ if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) {
     $taskController = new task_controller($id, $action, $task_model);
     require_once 'view/taskform.php';
     require_once 'view/tasklist.php';
-
-} else {
-    $login = new login($task_model);
-    require_once 'view/loginform.php';
+}else{
+   $login = new login($task_model);
+   require_once 'view/loginform.php';
 }
-
 require_once 'view/footer.php';
+
+
+

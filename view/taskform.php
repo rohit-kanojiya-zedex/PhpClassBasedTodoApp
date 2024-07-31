@@ -1,3 +1,6 @@
+<?php
+include __DIR__ . '/../App/Controller/access_control.php';
+?>
 <div class="p-5 m-3 border border-primary rounded bg-light">
     <a href="../index.php">
         <button type="button" class="btn btn-success"><?php echo isset($id) ? 'Edit Task' : 'Create New Task'; ?></button>

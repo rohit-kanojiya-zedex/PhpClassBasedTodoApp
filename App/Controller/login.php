@@ -12,9 +12,9 @@ class login
     public $username_or_email_err = "";
     public $login_err = "";
 
-    public function __construct($task_model)
+    public function __construct($pdo)
     {
-        $this->task_model = $task_model;
+        $this->task_model = $pdo;
 
         if (isset($_POST['submit'])) {
             $this->processLogin();
