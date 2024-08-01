@@ -1,2 +1,2 @@
 <?php
-include 'view/registerform.php';
+require_once 'View/RegisterForm.php';

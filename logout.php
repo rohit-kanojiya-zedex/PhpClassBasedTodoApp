@@ -13,5 +13,3 @@ class logout{
 }
 
 new logout();
-
-

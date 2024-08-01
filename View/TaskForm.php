@@ -1,5 +1,5 @@
 <?php
-include __DIR__ . '/../App/Controller/access_control.php';
+require_once __DIR__ . '/../App/Controller/AccessController.php';
 ?>
 <div class="p-5 m-3 border border-primary rounded bg-light">
     <a href="../index.php">
@@ -11,6 +11,6 @@ include __DIR__ . '/../App/Controller/access_control.php';
             <input type="text" class="form-control" name="task">
         </div>
         <button type="submit" name="submit" class="btn btn-primary"><?php echo isset($id) ? 'Update' : 'Submit'; ?></button>
-        <small><?php echo $taskController->filederror; ?></small>
+        <small><?php echo $objOfTaskController->filedError; ?></small>
     </form>
 </div>

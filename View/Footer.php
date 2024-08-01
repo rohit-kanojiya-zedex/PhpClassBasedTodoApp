@@ -1,5 +1,5 @@
 <?php
-include __DIR__ . '/../App/Controller/access_control.php';
+require_once __DIR__ . '/../App/Controller/AccessController.php';
 ?>
 <footer class="bg-primary text-center text-white">
     <div class="container p-4 pb-0">

@@ -1,6 +1,6 @@
 <?php
 ob_start();
-include __DIR__ . '/../App/Controller/access_control.php';
+require_once __DIR__ . '/../App/Controller/AccessController.php';
 ?>
 <!doctype html>
 <html lang="en">

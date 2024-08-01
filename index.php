@@ -1,33 +1,30 @@
 <?php
 session_start();
-require_once 'autoloader/class_loader.php';
+require_once 'AutoLoader/ClassAutoLoader.php';
 
-use App\Database\database;
-use App\Model\task;
-use App\Controller\task_controller;
-use App\Controller\login;
+use App\Database\ConnectionDatabase;
+use App\Model\TaskModel;
+use App\Controller\TaskController;
+use App\Controller\LoginController;
 
-$database = new database();
-$task_model = new task($database->getConnection());
+$objOfDatabase = new ConnectionDatabase();
+$objOfModel = new taskModel($objOfDatabase->getConnection());
 
-require_once 'view/header.php';
+require_once 'View/Header.php';
 if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) {
-    $result_set = $task_model->getdata();
+    $resultSet = $objOfModel->getdata();
     $counter = 1;
-    $function_path = '../index.php?id=';
-    $action_path = '&action=';
+    $functionPath = '../index.php?id=';
+    $actionPath = '&action=';
 
     $id = isset($_GET['id']) ? $_GET['id'] : null;
     $action = isset($_GET['action']) ? $_GET['action'] : null;
 
-    $taskController = new task_controller($id, $action, $task_model);
-    require_once 'view/taskform.php';
-    require_once 'view/tasklist.php';
+    $objOfTaskController = new TaskController($id, $action, $objOfModel);
+    require_once 'View/TaskForm.php';
+    require_once 'View/TaskList.php';
 }else{
-   $login = new login($task_model);
-   require_once 'view/loginform.php';
+    $objOfLogin = new LoginController($objOfModel);
+   require_once 'View/LoginForm.php';
 }
-require_once 'view/footer.php';
-
-
-
+require_once 'View/Footer.php';
