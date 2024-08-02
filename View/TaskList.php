@@ -24,7 +24,7 @@ require_once __DIR__ . '/../App/Controller/AccessController.php';
         <tr>
             <th scope="row"><?php echo $counter; ?></th>
             <td><?php echo($result['task']); ?></td>
-            <td><a href="<?php echo $functionPath . $result['id'] . $actionPath; ?>update"
+            <td><a href="<?php echo $functionPath . $result['id'] . $currentTask . $result['task'] . $actionPath; ?>update"
                    class="btn btn-primary">Edit</a></td>
             <td><a href="<?php echo $functionPath . $result['id'] . $actionPath; ?>delete" class="btn btn-danger">Delete</a>
             </td>

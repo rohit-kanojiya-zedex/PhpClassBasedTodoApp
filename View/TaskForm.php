@@ -8,7 +8,7 @@ require_once __DIR__ . '/../App/Controller/AccessController.php';
     <form method="post">
         <div class="form-group px-5 pt-5">
             <label>Task</label>
-            <input type="text" class="form-control" name="task">
+            <input type="text" class="form-control" name="task" value="<?php echo isset($currenTask) ? $currenTask : ''; ?>">
         </div>
         <button type="submit" name="submit" class="btn btn-primary"><?php echo isset($id) ? 'Update' : 'Submit'; ?></button>
         <small><?php echo $objOfTaskController->filedError; ?></small>

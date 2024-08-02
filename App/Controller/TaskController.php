@@ -8,9 +8,11 @@ class TaskController
     private $objOfModel;
     public $task;
 
-    public function __construct($currentId = null , $action= null , $objOfModel)
+    public function __construct($currentId = null , $action= null , $objOfModel ,$userId = null)
     {
         $this->objOfModel = $objOfModel;
+
+        !empty($userId) ? $this->objOfModel->userId = $userId : '';
 
         !empty($currentId) && $action==='delete' ? $this->deleteTask($currentId) : '';
 
@@ -21,7 +23,7 @@ class TaskController
             $this->objOfModel->task =  $this->task ;
 
             if (empty($this->task)) {
-                $this->filedError = 'No data';
+                $this->filedError = 'Please fill the filed';
             } else {
                 if (isset($_POST['submit']) && !empty($currentId) && $action==='update') {
                     $this->updateTask($currentId);

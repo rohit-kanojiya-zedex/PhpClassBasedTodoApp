@@ -10,30 +10,31 @@ class TaskModel {
     public $userName = "";
     public $password = "";
     public $emailId = "";
+    public $userId = "";
 
     public function __construct($pdoLink) {
         $this->pdoLink = $pdoLink;
     }
 
     public function getData() {
-        $sql = "SELECT * FROM `{$this->table}`";
+        $sql = "SELECT * FROM `{$this->table}` WHERE user_id = :user_id";
         $stmt = $this->pdoLink->prepare($sql);
+        $stmt->bindParam(':user_id', $this->userId, PDO::PARAM_INT);
         if (!$stmt->execute()) {
             throw new \Exception("Error executing query: " . implode(", ", $stmt->errorInfo()));
         }
-
         return $stmt;
     }
 
     public function create() {
-        $sql = "INSERT INTO `{$this->table}` (`task`) VALUES (:task)";
+        $sql = "INSERT INTO `{$this->table}` (`task`, `user_id`) VALUES (:task, :userId)";
         $stmt = $this->pdoLink->prepare($sql);
         $stmt->bindParam(':task', $this->task, PDO::PARAM_STR);
-        if ($stmt->execute()) {
-            return true;
-        } else {
-            throw new \Exception("Error creating taskModel");
+        $stmt->bindParam(':userId', $this->userId, PDO::PARAM_INT);
+        if (!$stmt->execute()) {
+            throw new \Exception("Error creating task: " . implode(", ", $stmt->errorInfo()));
         }
+        return true;
     }
 
     public function delete($id) {
